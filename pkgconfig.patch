@@ -1,6 +1,6 @@
-diff -Nur pkgconfig-0.7.0.orig/Makefile.am pkgconfig-0.7.0/Makefile.am
---- pkgconfig-0.7.0.orig/Makefile.am	Wed Jun  6 00:12:59 2001
-+++ pkgconfig-0.7.0/Makefile.am	Tue Jun 26 23:42:27 2001
+diff -ur pkgconfig-0.8.0.orig/Makefile.am pkgconfig-0.8.0/Makefile.am
+--- pkgconfig-0.8.0.orig/Makefile.am	Tue Jun  5 18:39:09 2001
++++ pkgconfig-0.8.0/Makefile.am	Wed Aug 15 17:53:13 2001
 @@ -1,5 +1,3 @@
 -SUBDIRS = glib-1.2.8
 -
@@ -34,27 +34,27 @@ diff -Nur pkgconfig-0.7.0.orig/Makefile.am pkgconfig-0.7.0/Makefile.am
  
 -pkg_config_LDADD=glib-1.2.8/libglib.la
 +pkg_config_LDADD=@GLIB_LIBS@
-diff -Nur pkgconfig-0.7.0.orig/configure.in pkgconfig-0.7.0/configure.in
---- pkgconfig-0.7.0.orig/configure.in	Wed Jun  6 01:15:29 2001
-+++ pkgconfig-0.7.0/configure.in	Tue Jun 26 23:44:18 2001
+diff -ur pkgconfig-0.8.0.orig/configure.in pkgconfig-0.8.0/configure.in
+--- pkgconfig-0.8.0.orig/configure.in	Wed Jul 11 05:56:56 2001
++++ pkgconfig-0.8.0/configure.in	Wed Aug 15 17:54:02 2001
 @@ -1,8 +1,6 @@
  
  AC_INIT(pkg-config.1)
  
 -AC_CONFIG_SUBDIRS(glib-1.2.8)
 -
- AM_INIT_AUTOMAKE(pkgconfig, 0.7.0)
+ AM_INIT_AUTOMAKE(pkgconfig, 0.8.0)
  
  AM_MAINTAINER_MODE
-@@ -14,6 +12,11 @@
- AC_PROG_CC
+@@ -15,6 +13,11 @@
  
  AC_FUNC_ALLOCA
-+
+ 
 +AC_CHECK_HEADERS(popt.h)
 +
 +AM_PATH_GLIB(1.2.8,,AC_MSG_ERROR([*** GLIB >= 1.2.8 not installed - please install first ***]))
 +AC_CHECK_LIB(popt, main)
- 
++
  AC_CHECK_FUNCS(setresuid setreuid,break)
  
+ AC_OUTPUT([Makefile])
