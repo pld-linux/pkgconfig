@@ -1,7 +1,7 @@
 Summary:	A tool for determining compilation options
 Name:		pkgconfig
-Version:	0.5.0
-Release:	3
+Version:	0.6.0
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		Development/Tools
@@ -32,6 +32,7 @@ o zainstalowanych w systemie bibliotekach.
 %patch -p1
 
 %build
+rm -f missing
 libtoolize --copy --force
 aclocal
 autoconf
@@ -43,7 +44,9 @@ automake -a -c
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_pkgconfigdir}
 
-make install DESTDIR=$RPM_BUILD_ROOT
+make install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	m4dir=%{_aclocaldir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -52,4 +55,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %{_pkgconfigdir}
+%{_aclocaldir}/*
 %{_mandir}/man1/*
