@@ -14,9 +14,7 @@ Patch0:		%{name}.patch
 URL:		http://www.freedesktop.org/software/pkgconfig/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	glib-devel
 BuildRequires:	libtool
-BuildRequires:	popt-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
