@@ -4,7 +4,7 @@ Summary(pt_BR):	Ferramenta para determinar opГУes de compilaГЦo
 Summary(ru):	Инструмент для определения опций компиляции
 Summary(uk):	╤нструмент для визначення опц╕й комп╕ляц╕╖
 Name:		pkgconfig
-Version:	0.14.0
+Version:	0.15.0
 Release:	1
 Epoch:		1
 License:	GPL
