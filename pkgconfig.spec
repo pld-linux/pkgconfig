@@ -1,8 +1,11 @@
 Summary:	A tool for determining compilation options
 Summary(pl):	NarzЙdzie do ustalania opcji kompilacji
+Summary(pt_BR):	Ferramenta para determinar opГУes de compilaГЦo
+Summary(ru):	Инструмент для определения опций компиляции
+Summary(uk):	╤нструмент для визначення опц╕й комп╕ляц╕╖
 Name:		pkgconfig
 Version:	0.12.0
-Release:	0.1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		Development/Tools
@@ -24,6 +27,21 @@ option and ouputs the necessary compiler and linker flags.
 %description -l pl
 pkgconfig jest programen uzywanym do uzyskiwania informacji o
 zainstalowanych w systemie bibliotekach.
+
+%description -l pt_BR
+A ferramenta pkgconfig determina opГУes de compilaГЦo. Para cada
+biblioteca requerida a ferramenta lЙ seus arquivos de configuraГЦo e
+emite as opГУes necessАrias para o compilador e ligador.
+
+%description -l ru
+pkgconfig - это инструмент для определения опций компиляции. Для
+каждой необходимой библиотеки он считывает конфигурационный файл и
+выдает необходимые флаги компилятора и линкера.
+
+%description -l uk
+pkgconfig - це ╕нструмент для визначення опц╕й комп╕ляц╕╖. Для кожно╖
+необх╕дно╖ б╕бл╕отеки в╕н зчиту╓ конф╕гурац╕йний файл та вида╓
+потр╕бн╕ флаги комп╕лятора та л╕нкера.
 
 %prep
 %setup -q
