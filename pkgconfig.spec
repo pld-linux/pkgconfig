@@ -9,12 +9,9 @@ Group:		Development/Tools
 Group(de):	Entwicklung/Werkzeuge
 Group(fr):	Development/Outils
 Group(pl):	Programowanie/Narzêdzia
-# uhm... ???
-#Source0:	ftp://download.sourceforge.net/pub/sourceforge/pkgconfig/%{name}-%{version}.tar.gz
 Source0:	http://www.freedesktop.org/software/pkgconfig/releases/%{name}-%{version}.tar.gz
 Patch0:		%{name}.patch
-#URL:		http://pkgconfig.sourceforge.net/
-URL:		http://www.freedesktop.org/software/pkgconfig
+URL:		http://www.freedesktop.org/software/pkgconfig/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	glib-devel
