@@ -10,6 +10,7 @@ Epoch:		1
 License:	GPL
 Group:		Development/Tools
 Source0:	http://www.freedesktop.org/software/pkgconfig/releases/%{name}-%{version}.tar.gz
+# Source0-md5: a7e4f60a6657dbc434334deb594cc242
 Patch0:		%{name}.patch
 URL:		http://www.freedesktop.org/software/pkgconfig/
 BuildRequires:	autoconf
