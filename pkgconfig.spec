@@ -5,18 +5,20 @@ Summary(ru):	Инструмент для определения опций компиляции
 Summary(uk):	╤нструмент для визначення опц╕й комп╕ляц╕╖
 Name:		pkgconfig
 Version:	0.15.0
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL
 Group:		Development/Tools
 Source0:	http://www.freedesktop.org/software/pkgconfig/releases/%{name}-%{version}.tar.gz
 # Source0-md5: a7e4f60a6657dbc434334deb594cc242
-Patch0:		%{name}.patch
-URL:		http://www.freedesktop.org/software/pkgconfig/
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	libtool
+Patch0:		%{name}-am18.patch
+# it's not directory, don't add /
+URL:		http://www.freedesktop.org/software/pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+# NOTE: don't try tu use system glib-1.2.x and popt - it BREAKS things.
+# See http://bugzilla.gnome.org/show_bug.cgi?id=63208.
+# Always use internal (modified) copies of glib/popt) --misiek
 
 %description
 pkgconfig is a tool for determining compilation options. For each
@@ -44,21 +46,9 @@ pkgconfig - це ╕нструмент для визначення опц╕й комп╕ляц╕╖. Для кожно╖
 
 %prep
 %setup -q
-# This patch BREAKS things. See http://bugzilla.gnome.org/show_bug.cgi?id=63208.
-# Always use internal (modified) copies of glib/popt) --misiek
-# %patch -p1
+%patch0 -p1
 
 %build
-#rm -f missing
-#libtoolize --copy --force
-#aclocal
-#autoconf
-#automake -a -c
-#cd glib-*
-#  libtoolize --copy --force
-#  aclocal
-#  autoconf
-#cd ..
 %configure2_13
 %{__make}
 
