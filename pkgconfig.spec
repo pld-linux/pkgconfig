@@ -1,7 +1,7 @@
 Summary:	A tool for determining compilation options
 Name:		pkgconfig
 Version:	0.5.0
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL
 Group:		Development/Tools
@@ -14,6 +14,7 @@ URL:		http://pkgconfig.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	glib-devel
+BuildRequires:	libtool
 BuildRequires:	popt-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -31,6 +32,7 @@ o zainstalowanych w systemie bibliotekach.
 %patch -p1
 
 %build
+libtoolize --copy --force
 aclocal
 autoconf
 automake -a -c
