@@ -22,6 +22,10 @@ pkgconfig is a tool for determining compilation options. For each
 required library it reads a configuration file installed in a standard
 option and ouputs the necessary compiler and linker flags.
 
+%description -l pl
+pkgconfig jest programen uzywanym do uzyskiwania informacji
+o zainstalowanych w systemie bibliotekach.
+
 %prep
 %setup -q
 %patch -p1
