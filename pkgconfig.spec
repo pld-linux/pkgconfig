@@ -4,16 +4,15 @@ Summary(pt_BR):	Ferramenta para determinar opГУes de compilaГЦo
 Summary(ru):	Инструмент для определения опций компиляции
 Summary(uk):	╤нструмент для визначення опц╕й комп╕ляц╕╖
 Name:		pkgconfig
-Version:	0.15.0
-Release:	5
+Version:	0.16.0
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		Development/Tools
 Source0:	http://www.freedesktop.org/software/pkgconfig/releases/%{name}-%{version}.tar.gz
-# Source0-md5:	a7e4f60a6657dbc434334deb594cc242
-Patch0:		%{name}-am18.patch
+# Source0-md5:	c72ed327f090c78a89e50bc1d73c72ca
 # it's not directory, don't add /
-URL:		http://www.freedesktop.org/software/pkgconfig
+URL:		http://www.freedesktop.org/wiki/Software_2fpkgconfig
 BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -47,7 +46,6 @@ pkgconfig - це ╕нструмент для визначення опц╕й комп╕ляц╕╖. Для кожно╖
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 cp -f /usr/share/automake/config.* .
