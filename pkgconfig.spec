@@ -1,8 +1,8 @@
 Summary:	A tool for determining compilation options
 Summary(pl):	Narzêdzie do ustalania opcji kompilacji
 Name:		pkgconfig
-Version:	0.7.0
-Release:	4
+Version:	0.8.0
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		Development/Tools
