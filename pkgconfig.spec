@@ -1,4 +1,4 @@
-Summary:	A tool for memory profiling and leak detection
+Summary:	A tool for determining compilation options
 Name:		pkgconfig
 Version:	0.5.0
 Release:	1
