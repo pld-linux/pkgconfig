@@ -1,0 +1,61 @@
+diff -Nru pkgconfig-0.5.0/Makefile.am pkgconfig-0.5.0.new/Makefile.am
+--- pkgconfig-0.5.0/Makefile.am	Thu Jan  4 02:15:17 2001
++++ pkgconfig-0.5.0.new/Makefile.am	Thu Jan  4 02:14:04 2001
+@@ -1,19 +1,18 @@
+-SUBDIRS = glib-1.2.8
+ 
+-#m4dir = $(datadir)/aclocal
+-#m4_SCRIPTS = pkg.m4
+-
+-#EXTRA_DIST = $(m4_SCRIPTS)
+-EXTRA_DIST = pkg-config.1
++man_MANS = pkg-config.1
+ 
+ bin_PROGRAMS = pkg-config
+ 
+-INCLUDES=-DPKGLIBDIR="\"$(pkglibdir)\"" -I./glib-1.2.8
+-
+-pkg_config_SOURCES= pkg.h pkg.c 			\
+-				 partial-glib.h partial-glib.c 	\
+-				 parse.h parse.c main.c		\
+-				findme.c findme.h popt.c popt.h poptconfig.c popthelp.c poptint.h poptparse.c
++INCLUDES= -DPKGLIBDIR="\"$(pkglibdir)\"" \
++	 @GLIB_CFLAGS@
+ 
++pkg_config_SOURCES= \
++	pkg.h \
++	pkg.c \
++	parse.h \
++	parse.c \
++	main.c \
++	findme.c \
++	findme.h
+ 
+-pkg_config_LDADD=glib-1.2.8/libglib.la
++pkg_config_LDADD= @GLIB_LIBS@
+diff -Nru pkgconfig-0.5.0/configure.in pkgconfig-0.5.0.new/configure.in
+--- pkgconfig-0.5.0/configure.in	Thu Jan  4 02:15:17 2001
++++ pkgconfig-0.5.0.new/configure.in	Thu Jan  4 02:09:12 2001
+@@ -1,8 +1,6 @@
+ 
+ AC_INIT(pkg-config.1)
+ 
+-AC_CONFIG_SUBDIRS(glib-1.2.8)
+-
+ AM_INIT_AUTOMAKE(pkgconfig, 0.5.0)
+ 
+ AM_MAINTAINER_MODE
+@@ -10,7 +8,11 @@
+ AM_CONFIG_HEADER(config.h)
+ 
+ AM_PROG_LIBTOOL
+-
+ AC_PROG_CC
+ 
+-AC_OUTPUT([Makefile])
++AC_CHECK_HEADERS(popt.h)
++
++AM_PATH_GLIB(1.2.8,,AC_MSG_ERROR([*** GLIB >= 1.2.8 not installed - please install first ***]))
++AC_CHECK_LIB(popt, main)
++
++AC_OUTPUT(Makefile)
