@@ -4,12 +4,12 @@ Summary(pt_BR):	Ferramenta para determinar opГУes de compilaГЦo
 Summary(ru):	Инструмент для определения опций компиляции
 Summary(uk):	╤нструмент для визначення опц╕й комп╕ляц╕╖
 Name:		pkgconfig
-Version:	0.12.0
-Release:	2
+Version:	0.13.0
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		Development/Tools
-Source0:	http://www.freedesktop.org/software/pkgconfig/releases/%{name}-%{version}.tar.bz2
+Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/0.13/%{name}-%{version}.tar.bz2
 Patch0:		%{name}.patch
 URL:		http://www.freedesktop.org/software/pkgconfig/
 BuildRequires:	autoconf
