@@ -27,7 +27,7 @@ required library it reads a configuration file installed in a standard
 option and ouputs the necessary compiler and linker flags.
 
 %description -l pl
-pkgconfig jest programen uzywanym do uzyskiwania informacji o
+pkgconfig jest programem u¿ywanym do uzyskiwania informacji o
 zainstalowanych w systemie bibliotekach.
 
 %description -l pt_BR
