@@ -1,12 +1,12 @@
 Summary:	A tool for determining compilation options
 Summary(pl):	Narzêdzie do ustalania opcji kompilacji
 Name:		pkgconfig
-Version:	0.11.0
-Release:	1
+Version:	0.12.0
+Release:	0.1
 Epoch:		1
 License:	GPL
 Group:		Development/Tools
-Source0:	http://www.freedesktop.org/software/pkgconfig/releases/%{name}-%{version}.tar.gz
+Source0:	http://www.freedesktop.org/software/pkgconfig/releases/%{name}-%{version}.tar.bz2
 Patch0:		%{name}.patch
 URL:		http://www.freedesktop.org/software/pkgconfig/
 BuildRequires:	autoconf
