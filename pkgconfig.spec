@@ -5,7 +5,7 @@ Summary(ru):	Инструмент для определения опций компиляции
 Summary(uk):	╤нструмент для визначення опц╕й комп╕ляц╕╖
 Name:		pkgconfig
 Version:	0.15.0
-Release:	4
+Release:	5
 Epoch:		1
 License:	GPL
 Group:		Development/Tools
