@@ -1,6 +1,7 @@
 Summary:	A tool for determining compilation options
+Summary(pl):	Narzêdzie do ustalania opcji kompilacji
 Name:		pkgconfig
-Version:	0.6.0
+Version:	0.7.0
 Release:	1
 Epoch:		1
 License:	GPL
@@ -8,9 +9,12 @@ Group:		Development/Tools
 Group(de):	Entwicklung/Werkzeuge
 Group(fr):	Development/Outils
 Group(pl):	Programowanie/Narzêdzia
-Source0:	ftp://download.sourceforge.net/pub/sourceforge/pkgconfig/%{name}-%{version}.tar.gz
+# uhm... ???
+#Source0:	ftp://download.sourceforge.net/pub/sourceforge/pkgconfig/%{name}-%{version}.tar.gz
+Source0:	http://www.freedesktop.org/software/pkgconfig/releases/%{name}-%{version}.tar.gz
 Patch0:		%{name}.patch
-URL:		http://pkgconfig.sourceforge.net/
+#URL:		http://pkgconfig.sourceforge.net/
+URL:		http://www.freedesktop.org/software/pkgconfig
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	glib-devel

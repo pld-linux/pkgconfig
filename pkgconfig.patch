@@ -1,12 +1,13 @@
---- pkgconfig-0.6.0/Makefile.am.wiget	Wed Jun  6 02:54:36 2001
-+++ pkgconfig-0.6.0/Makefile.am	Mon Jun 18 17:26:53 2001
+diff -Nur pkgconfig-0.7.0.orig/Makefile.am pkgconfig-0.7.0/Makefile.am
+--- pkgconfig-0.7.0.orig/Makefile.am	Wed Jun  6 00:12:59 2001
++++ pkgconfig-0.7.0/Makefile.am	Tue Jun 26 23:42:27 2001
 @@ -1,5 +1,3 @@
 -SUBDIRS = glib-1.2.8
 -
  m4dir = $(datadir)/aclocal
  m4_DATA = pkg.m4
  
-@@ -8,26 +6,18 @@
+@@ -8,23 +6,15 @@
  
  bin_PROGRAMS = pkg-config
  
@@ -29,32 +30,31 @@
 -	popthelp.c \
 -	poptint.h \
 -	poptparse.c
-+	findme.h 
++	findme.h
  
 -pkg_config_LDADD=glib-1.2.8/libglib.la
 +pkg_config_LDADD=@GLIB_LIBS@
+diff -Nur pkgconfig-0.7.0.orig/configure.in pkgconfig-0.7.0/configure.in
+--- pkgconfig-0.7.0.orig/configure.in	Wed Jun  6 01:15:29 2001
++++ pkgconfig-0.7.0/configure.in	Tue Jun 26 23:44:18 2001
+@@ -1,8 +1,6 @@
  
- ChangeLog:
- 	cvs2cl.pl
---- pkgconfig-0.6.0/configure.in.wiget	Wed Jun  6 02:30:53 2001
-+++ pkgconfig-0.6.0/configure.in	Mon Jun 18 17:23:46 2001
-@@ -1,7 +1,5 @@
- AC_INIT(pkg.m4.in)
+ AC_INIT(pkg-config.1)
  
 -AC_CONFIG_SUBDIRS(glib-1.2.8)
 -
- AM_INIT_AUTOMAKE(pkgconfig, 0.6.0)
- ATLEAST="0.6.0"
- AC_SUBST(ATLEAST)
-@@ -9,6 +7,11 @@
+ AM_INIT_AUTOMAKE(pkgconfig, 0.7.0)
+ 
  AM_MAINTAINER_MODE
+@@ -14,6 +12,11 @@
  AC_PROG_CC
- AM_PROG_LIBTOOL
+ 
+ AC_FUNC_ALLOCA
 +
 +AC_CHECK_HEADERS(popt.h)
 +
 +AM_PATH_GLIB(1.2.8,,AC_MSG_ERROR([*** GLIB >= 1.2.8 not installed - please install first ***]))
 +AC_CHECK_LIB(popt, main)
  
- AM_CONFIG_HEADER(config.h)
- AC_FUNC_ALLOCA
+ AC_CHECK_FUNCS(setresuid setreuid,break)
+ 
