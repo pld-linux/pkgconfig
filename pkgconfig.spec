@@ -27,15 +27,15 @@ option and ouputs the necessary compiler and linker flags.
 %patch -p1
 
 %build
-automake
 aclocal
 autoconf
+automake -a -c
 %configure
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_libdir}/pkgconfig
+install -d $RPM_BUILD_ROOT%{_pkgconfigdir}
 
 make install DESTDIR=$RPM_BUILD_ROOT
 
@@ -45,5 +45,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
-%{_libdir}/pkgconfig
+%{_pkgconfigdir}
 %{_mandir}/man1/*
