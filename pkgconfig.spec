@@ -2,7 +2,7 @@ Summary:	A tool for determining compilation options
 Summary(pl):	Narzêdzie do ustalania opcji kompilacji
 Name:		pkgconfig
 Version:	0.8.0
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		Development/Tools
@@ -30,15 +30,22 @@ o zainstalowanych w systemie bibliotekach.
 
 %prep
 %setup -q
-%patch -p1
+# This patch BREAKS things. See http://bugzilla.gnome.org/show_bug.cgi?id=63208.
+# Always use internal (modified) copies of glib/popt) --misiek
+# %patch -p1
 
 %build
-rm -f missing
-libtoolize --copy --force
-aclocal
-autoconf
-automake -a -c
-%configure
+#rm -f missing
+#libtoolize --copy --force
+#aclocal
+#autoconf
+#automake -a -c
+#cd glib-*
+#  libtoolize --copy --force
+#  aclocal
+#  autoconf
+#cd ..
+%configure2_13
 %{__make}
 
 %install
