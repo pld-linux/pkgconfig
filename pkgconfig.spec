@@ -5,7 +5,7 @@ Summary(ru):	Инструмент для определения опций компиляции
 Summary(uk):	╤нструмент для визначення опц╕й комп╕ляц╕╖
 Name:		pkgconfig
 Version:	0.15.0
-Release:	3
+Release:	4
 Epoch:		1
 License:	GPL
 Group:		Development/Tools
@@ -14,6 +14,7 @@ Source0:	http://www.freedesktop.org/software/pkgconfig/releases/%{name}-%{versio
 Patch0:		%{name}-am18.patch
 # it's not directory, don't add /
 URL:		http://www.freedesktop.org/software/pkgconfig
+BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # NOTE: don't try tu use system glib-1.2.x and popt - it BREAKS things.
@@ -49,6 +50,8 @@ pkgconfig - це ╕нструмент для визначення опц╕й комп╕ляц╕╖. Для кожно╖
 %patch0 -p1
 
 %build
+cp -f /usr/share/automake/config.* .
+cp -f /usr/share/automake/config.* glib-1.2.8
 %configure2_13
 %{__make}
 
