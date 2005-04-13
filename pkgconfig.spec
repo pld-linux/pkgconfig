@@ -4,13 +4,13 @@ Summary(pt_BR):	Ferramenta para determinar opГУes de compilaГЦo
 Summary(ru):	Инструмент для определения опций компиляции
 Summary(uk):	╤нструмент для визначення опц╕й комп╕ляц╕╖
 Name:		pkgconfig
-Version:	0.17
+Version:	0.17.1
 Release:	1
 Epoch:		1
 License:	GPL
 Group:		Development/Tools
 Source0:	http://pkgconfig.freedesktop.org/releases/%{name}-%{version}.tar.gz
-# Source0-md5:	a7d9844b3d89af68388f9fa996634322
+# Source0-md5:	ff6e1f2307d077630dda17b4df3c0518
 # it's not directory, don't add /
 URL:		http://www.freedesktop.org/wiki/Software_2fpkgconfig
 BuildRequires:	automake
