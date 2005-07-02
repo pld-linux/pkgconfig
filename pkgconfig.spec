@@ -5,7 +5,7 @@ Summary(ru):	Инструмент для определения опций компиляции
 Summary(uk):	╤нструмент для визначення опц╕й комп╕ляц╕╖
 Name:		pkgconfig
 Version:	0.18.1
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		Development/Tools
@@ -50,7 +50,8 @@ pkgconfig - це ╕нструмент для визначення опц╕й комп╕ляц╕╖. Для кожно╖
 %build
 cp -f /usr/share/automake/config.* .
 cp -f /usr/share/automake/config.* glib-1.2.8
-%configure
+%configure \
+	--with-pc-path="%{_pkgconfigdir}"
 %{__make}
 
 %install
