@@ -4,17 +4,19 @@ Summary(pt_BR):	Ferramenta para determinar opГУes de compilaГЦo
 Summary(ru):	Инструмент для определения опций компиляции
 Summary(uk):	╤нструмент для визначення опц╕й комп╕ляц╕╖
 Name:		pkgconfig
-Version:	0.18.1
-Release:	2
+Version:	0.19
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		Development/Tools
 Source0:	http://pkgconfig.freedesktop.org/releases/pkg-config-%{version}.tar.gz
-# Source0-md5:	311e86f828e1da62163c927dbe27c0c3
+# Source0-md5:	25f106d2cc82a0013f5bdc89875d5790
 # it's not directory, don't add /
 URL:		http://www.freedesktop.org/wiki/Software_2fpkgconfig
 BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_noarchpkgconfigdir	%{_datadir}/pkgconfig
 
 # NOTE: don't try tu use system glib-1.2.x and popt - it BREAKS things.
 # See http://bugzilla.gnome.org/show_bug.cgi?id=63208.
@@ -50,13 +52,13 @@ pkgconfig - це ╕нструмент для визначення опц╕й комп╕ляц╕╖. Для кожно╖
 %build
 cp -f /usr/share/automake/config.* .
 cp -f /usr/share/automake/config.* glib-1.2.8
-%configure \
-	--with-pc-path="%{_pkgconfigdir}"
+%configure
+
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_pkgconfigdir}
+install -d $RPM_BUILD_ROOT{%{_pkgconfigdir},%{_noarchpkgconfigdir}}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
@@ -70,5 +72,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/*
 %{_pkgconfigdir}
+%{_noarchpkgconfigdir}
 %{_aclocaldir}/*
 %{_mandir}/man1/*
