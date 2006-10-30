@@ -5,7 +5,7 @@ Summary(ru):	Инструмент для определения опций компиляции
 Summary(uk):	╤нструмент для визначення опц╕й комп╕ляц╕╖
 Name:		pkgconfig
 Version:	0.21
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		Development/Tools
@@ -15,8 +15,6 @@ URL:		http://pkgconfig.freedesktop.org/wiki/
 BuildRequires:	automake
 Provides:	pkg-config = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_noarchpkgconfigdir	%{_datadir}/pkgconfig
 
 # NOTE: don't try tu use system glib-1.2.x and popt - it BREAKS things.
 # See http://bugzilla.gnome.org/show_bug.cgi?id=63208.
@@ -58,8 +56,6 @@ cp -f /usr/share/automake/config.* glib-1.2.8
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_pkgconfigdir},%{_noarchpkgconfigdir}}
-
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	m4dir=%{_aclocaldir}
@@ -71,7 +67,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/*
-%{_pkgconfigdir}
-%{_noarchpkgconfigdir}
 %{_aclocaldir}/*
 %{_mandir}/man1/*
