@@ -1,0 +1,2 @@
+- added -a -c to automake
+- use %_pkgconfigdir macro
