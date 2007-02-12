@@ -1,8 +1,8 @@
 Summary:	A tool for determining compilation options
-Summary(pl):	NarzЙdzie do ustalania opcji kompilacji
-Summary(pt_BR):	Ferramenta para determinar opГУes de compilaГЦo
-Summary(ru):	Инструмент для определения опций компиляции
-Summary(uk):	╤нструмент для визначення опц╕й комп╕ляц╕╖
+Summary(pl.UTF-8):   Narzд≥dzie do ustalania opcji kompilacji
+Summary(pt_BR.UTF-8):   Ferramenta para determinar opц╖ц╣es de compilaц╖цёo
+Summary(ru.UTF-8):   п≤п╫я│я┌я─я┐п╪п╣п╫я┌ п╢п╩я▐ п╬п©я─п╣п╢п╣п╩п╣п╫п╦я▐ п╬п©я├п╦п╧ п╨п╬п╪п©п╦п╩я▐я├п╦п╦
+Summary(uk.UTF-8):   п├п╫я│я┌я─я┐п╪п╣п╫я┌ п╢п╩я▐ п╡п╦п╥п╫п╟я┤п╣п╫п╫я▐ п╬п©я├я√п╧ п╨п╬п╪п©я√п╩я▐я├я√я≈
 Name:		pkgconfig
 Version:	0.21
 Release:	2
@@ -25,24 +25,24 @@ pkgconfig is a tool for determining compilation options. For each
 required library it reads a configuration file installed in a standard
 option and ouputs the necessary compiler and linker flags.
 
-%description -l pl
-pkgconfig jest programem u©ywanym do uzyskiwania informacji o
+%description -l pl.UTF-8
+pkgconfig jest programem uе╪ywanym do uzyskiwania informacji o
 zainstalowanych w systemie bibliotekach.
 
-%description -l pt_BR
-A ferramenta pkgconfig determina opГУes de compilaГЦo. Para cada
-biblioteca requerida a ferramenta lЙ seus arquivos de configuraГЦo e
-emite as opГУes necessАrias para o compilador e ligador.
+%description -l pt_BR.UTF-8
+A ferramenta pkgconfig determina opц╖ц╣es de compilaц╖цёo. Para cada
+biblioteca requerida a ferramenta lц╙ seus arquivos de configuraц╖цёo e
+emite as opц╖ц╣es necessц║rias para o compilador e ligador.
 
-%description -l ru
-pkgconfig - это инструмент для определения опций компиляции. Для
-каждой необходимой библиотеки он считывает конфигурационный файл и
-выдает необходимые флаги компилятора и линкера.
+%description -l ru.UTF-8
+pkgconfig - я█я┌п╬ п╦п╫я│я┌я─я┐п╪п╣п╫я┌ п╢п╩я▐ п╬п©я─п╣п╢п╣п╩п╣п╫п╦я▐ п╬п©я├п╦п╧ п╨п╬п╪п©п╦п╩я▐я├п╦п╦. п■п╩я▐
+п╨п╟п╤п╢п╬п╧ п╫п╣п╬п╠я┘п╬п╢п╦п╪п╬п╧ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╦ п╬п╫ я│я┤п╦я┌я▀п╡п╟п╣я┌ п╨п╬п╫я└п╦пЁя┐я─п╟я├п╦п╬п╫п╫я▀п╧ я└п╟п╧п╩ п╦
+п╡я▀п╢п╟п╣я┌ п╫п╣п╬п╠я┘п╬п╢п╦п╪я▀п╣ я└п╩п╟пЁп╦ п╨п╬п╪п©п╦п╩я▐я┌п╬я─п╟ п╦ п╩п╦п╫п╨п╣я─п╟.
 
-%description -l uk
-pkgconfig - це ╕нструмент для визначення опц╕й комп╕ляц╕╖. Для кожно╖
-необх╕дно╖ б╕бл╕отеки в╕н зчиту╓ конф╕гурац╕йний файл та вида╓
-потр╕бн╕ флаги комп╕лятора та л╕нкера.
+%description -l uk.UTF-8
+pkgconfig - я├п╣ я√п╫я│я┌я─я┐п╪п╣п╫я┌ п╢п╩я▐ п╡п╦п╥п╫п╟я┤п╣п╫п╫я▐ п╬п©я├я√п╧ п╨п╬п╪п©я√п╩я▐я├я√я≈. п■п╩я▐ п╨п╬п╤п╫п╬я≈
+п╫п╣п╬п╠я┘я√п╢п╫п╬я≈ п╠я√п╠п╩я√п╬я┌п╣п╨п╦ п╡я√п╫ п╥я┤п╦я┌я┐я■ п╨п╬п╫я└я√пЁя┐я─п╟я├я√п╧п╫п╦п╧ я└п╟п╧п╩ я┌п╟ п╡п╦п╢п╟я■
+п©п╬я┌я─я√п╠п╫я√ я└п╩п╟пЁп╦ п╨п╬п╪п©я√п╩я▐я┌п╬я─п╟ я┌п╟ п╩я√п╫п╨п╣я─п╟.
 
 %prep
 %setup -q -n pkg-config-%{version}
