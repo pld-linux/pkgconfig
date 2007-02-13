@@ -1,8 +1,8 @@
 Summary:	A tool for determining compilation options
-Summary(pl.UTF-8):   Narzędzie do ustalania opcji kompilacji
-Summary(pt_BR.UTF-8):   Ferramenta para determinar opções de compilação
-Summary(ru.UTF-8):   Инструмент для определения опций компиляции
-Summary(uk.UTF-8):   Інструмент для визначення опцій компіляції
+Summary(pl.UTF-8):	Narzędzie do ustalania opcji kompilacji
+Summary(pt_BR.UTF-8):	Ferramenta para determinar opções de compilação
+Summary(ru.UTF-8):	Инструмент для определения опций компиляции
+Summary(uk.UTF-8):	Інструмент для визначення опцій компіляції
 Name:		pkgconfig
 Version:	0.21
 Release:	2
