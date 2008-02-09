@@ -4,13 +4,13 @@ Summary(pt_BR.UTF-8):	Ferramenta para determinar opções de compilação
 Summary(ru.UTF-8):	Инструмент для определения опций компиляции
 Summary(uk.UTF-8):	Інструмент для визначення опцій компіляції
 Name:		pkgconfig
-Version:	0.22
+Version:	0.23
 Release:	1
 Epoch:		1
-License:	GPL
+License:	GPL v2+
 Group:		Development/Tools
 Source0:	http://pkgconfig.freedesktop.org/releases/pkg-config-%{version}.tar.gz
-# Source0-md5:	fd5c547e9d66ba49bc735ccb8c791f2a
+# Source0-md5:	d922a88782b64441d06547632fd85744
 URL:		http://pkgconfig.freedesktop.org/wiki/
 BuildRequires:	automake
 Provides:	pkg-config = %{version}-%{release}
@@ -19,7 +19,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 # NOTE: don't try to use system popt - it BREAKS things.
 # See http://bugzilla.gnome.org/show_bug.cgi?id=63208.
 # Always use internal (modified) copy of popt) --misiek
-# system glib2 is supported now, but BR: pkgconfig
+# system glib2 is supported now, but BR: (already installed) pkgconfig
 
 %description
 pkgconfig is a tool for determining compilation options. For each
@@ -50,7 +50,7 @@ pkgconfig - це інструмент для визначення опцій к�
 
 %build
 cp -f /usr/share/automake/config.* .
-cp -f /usr/share/automake/config.* glib-1.2.8
+cp -f /usr/share/automake/config.* glib-1.2.10
 %configure
 
 %{__make}
