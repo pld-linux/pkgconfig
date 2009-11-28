@@ -16,6 +16,8 @@ BuildRequires:	automake
 Provides:	pkg-config = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%undefine	__cxx
+
 # NOTE: don't try to use system popt - it BREAKS things.
 # See http://bugzilla.gnome.org/show_bug.cgi?id=63208.
 # Always use internal (modified) copy of popt) --misiek
