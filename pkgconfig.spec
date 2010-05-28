@@ -1,3 +1,4 @@
+# TODO: system popt, system glib2 with bootstrap bcond?
 Summary:	A tool for determining compilation options
 Summary(pl.UTF-8):	Narzędzie do ustalania opcji kompilacji
 Summary(pt_BR.UTF-8):	Ferramenta para determinar opções de compilação
@@ -17,11 +18,6 @@ Provides:	pkg-config = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %undefine	__cxx
-
-# NOTE: don't try to use system popt - it BREAKS things.
-# See http://bugzilla.gnome.org/show_bug.cgi?id=63208.
-# Always use internal (modified) copy of popt) --misiek
-# system glib2 is supported now, but BR: (already installed) pkgconfig
 
 %description
 pkgconfig is a tool for determining compilation options. For each
@@ -68,7 +64,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README
+%doc AUTHORS ChangeLog NEWS README pkg-config-guide.html
 %attr(755,root,root) %{_bindir}/pkg-config
 %{_aclocaldir}/pkg.m4
 %{_mandir}/man1/pkg-config.1*
