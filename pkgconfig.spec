@@ -4,13 +4,13 @@ Summary(pt_BR.UTF-8):	Ferramenta para determinar opções de compilação
 Summary(ru.UTF-8):	Инструмент для определения опций компиляции
 Summary(uk.UTF-8):	Інструмент для визначення опцій компіляції
 Name:		pkgconfig
-Version:	0.23
+Version:	0.25
 Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		Development/Tools
 Source0:	http://pkgconfig.freedesktop.org/releases/pkg-config-%{version}.tar.gz
-# Source0-md5:	d922a88782b64441d06547632fd85744
+# Source0-md5:	a3270bab3f4b69b7dc6dbdacbcae9745
 URL:		http://pkgconfig.freedesktop.org/wiki/
 BuildRequires:	automake
 Provides:	pkg-config = %{version}-%{release}
@@ -69,6 +69,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_bindir}/*
-%{_aclocaldir}/*
-%{_mandir}/man1/*
+%attr(755,root,root) %{_bindir}/pkg-config
+%{_aclocaldir}/pkg.m4
+%{_mandir}/man1/pkg-config.1*
