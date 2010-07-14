@@ -6,12 +6,13 @@ Summary(ru.UTF-8):	Инструмент для определения опций
 Summary(uk.UTF-8):	Інструмент для визначення опцій компіляції
 Name:		pkgconfig
 Version:	0.25
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2+
 Group:		Development/Tools
 Source0:	http://pkgconfig.freedesktop.org/releases/pkg-config-%{version}.tar.gz
 # Source0-md5:	a3270bab3f4b69b7dc6dbdacbcae9745
+Patch0:		%{name}-ac.patch
 URL:		http://pkgconfig.freedesktop.org/wiki/
 BuildRequires:	automake
 Provides:	pkg-config = %{version}-%{release}
@@ -45,6 +46,7 @@ pkgconfig - це інструмент для визначення опцій к�
 
 %prep
 %setup -q -n pkg-config-%{version}
+%patch0 -p1
 
 %build
 cp -f /usr/share/automake/config.* .
