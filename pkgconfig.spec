@@ -1,20 +1,22 @@
-# TODO: system popt, system glib2 with bootstrap bcond?
 Summary:	A tool for determining compilation options
 Summary(pl.UTF-8):	Narzędzie do ustalania opcji kompilacji
 Summary(pt_BR.UTF-8):	Ferramenta para determinar opções de compilação
 Summary(ru.UTF-8):	Инструмент для определения опций компиляции
 Summary(uk.UTF-8):	Інструмент для визначення опцій компіляції
 Name:		pkgconfig
-Version:	0.25
-Release:	4
+Version:	0.26
+Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		Development/Tools
 Source0:	http://pkgconfig.freedesktop.org/releases/pkg-config-%{version}.tar.gz
-# Source0-md5:	a3270bab3f4b69b7dc6dbdacbcae9745
-Patch0:		%{name}-ac.patch
+# Source0-md5:	47525c26a9ba7ba14bf85e01509a7234
 URL:		http://pkgconfig.freedesktop.org/wiki/
+BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	glib2-devel
+BuildRequires:	libtool
+BuildRequires:	popt-devel
 Provides:	pkg-config = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -46,12 +48,17 @@ pkgconfig - це інструмент для визначення опцій к�
 
 %prep
 %setup -q -n pkg-config-%{version}
-%patch0 -p1
 
 %build
-cp -f /usr/share/automake/config.* .
-cp -f /usr/share/automake/config.* glib-1.2.10
-%configure
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
+GLIB_CFLAGS="-I/usr/include/glib-2.0 -I%{_libdir}/glib-2.0/include" \
+GLIB_LIBS="-lglib-2.0" \
+%configure \
+	--with-installed-popt
 
 %{__make}
 
