@@ -5,7 +5,7 @@ Summary(ru.UTF-8):	Инструмент для определения опций
 Summary(uk.UTF-8):	Інструмент для визначення опцій компіляції
 Name:		pkgconfig
 Version:	0.26
-Release:	3
+Release:	4
 Epoch:		1
 License:	GPL v2+
 Group:		Development/Tools
@@ -18,7 +18,7 @@ BuildRequires:	glib2-devel
 BuildRequires:	libtool
 BuildRequires:	popt-devel
 Provides:	pkg-config = %{version}-%{release}
-Provides:	pkgconfig(pkg-config) >= %{version}
+Provides:	pkgconfig(pkg-config) = %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %undefine	__cxx
