@@ -5,7 +5,7 @@ Summary(ru.UTF-8):	Инструмент для определения опций
 Summary(uk.UTF-8):	Інструмент для визначення опцій компіляції
 Name:		pkgconfig
 Version:	0.26
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2+
 Group:		Development/Tools
