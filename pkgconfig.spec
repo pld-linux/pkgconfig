@@ -4,19 +4,19 @@ Summary(pt_BR.UTF-8):	Ferramenta para determinar opções de compilação
 Summary(ru.UTF-8):	Инструмент для определения опций компиляции
 Summary(uk.UTF-8):	Інструмент для визначення опцій компіляції
 Name:		pkgconfig
-Version:	0.26
-Release:	4
+Version:	0.27
+Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		Development/Tools
 Source0:	http://pkgconfig.freedesktop.org/releases/pkg-config-%{version}.tar.gz
-# Source0-md5:	47525c26a9ba7ba14bf85e01509a7234
+# Source0-md5:	3a4c9feab14b6719afd8904945d9b4e4
 URL:		http://pkgconfig.freedesktop.org/wiki/
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	glib2-devel
-BuildRequires:	libtool
-BuildRequires:	popt-devel
+BuildRequires:	autoconf >= 2.62
+BuildRequires:	automake >= 1:1.11
+BuildRequires:	glib2-devel >= 1:2.16
+BuildRequires:	libtool >= 2:2.2
+Requires:	glib2 >= 1:2.16
 Provides:	pkg-config = %{version}-%{release}
 Provides:	pkgconfig(pkg-config) = %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -59,7 +59,7 @@ pkgconfig - це інструмент для визначення опцій к�
 GLIB_CFLAGS="-I/usr/include/glib-2.0 -I%{_libdir}/glib-2.0/include" \
 GLIB_LIBS="-lglib-2.0" \
 %configure \
-	--with-installed-popt
+	--disable-silent-rules
 
 %{__make}
 
