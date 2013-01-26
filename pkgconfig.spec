@@ -4,13 +4,13 @@ Summary(pt_BR.UTF-8):	Ferramenta para determinar opções de compilação
 Summary(ru.UTF-8):	Инструмент для определения опций компиляции
 Summary(uk.UTF-8):	Інструмент для визначення опцій компіляції
 Name:		pkgconfig
-Version:	0.27.1
+Version:	0.28
 Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		Development/Tools
 Source0:	http://pkgconfig.freedesktop.org/releases/pkg-config-%{version}.tar.gz
-# Source0-md5:	5392b4e3372879c5bf856173b418d6a2
+# Source0-md5:	aa3c86e67551adc3ac865160e34a2a0d
 URL:		http://pkgconfig.freedesktop.org/wiki/
 BuildRequires:	autoconf >= 2.62
 BuildRequires:	automake >= 1:1.11
@@ -69,6 +69,9 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	m4dir=%{_aclocaldir}
 
+# packaged as %doc
+%{__rm} $RPM_BUILD_ROOT%{_docdir}/pkg-config/pkg-config-guide.html
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -76,5 +79,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README pkg-config-guide.html
 %attr(755,root,root) %{_bindir}/pkg-config
+%attr(755,root,root) %{_bindir}/*-pld-linux-gnu-pkg-config
 %{_aclocaldir}/pkg.m4
 %{_mandir}/man1/pkg-config.1*
