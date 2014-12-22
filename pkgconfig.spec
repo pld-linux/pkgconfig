@@ -81,6 +81,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README pkg-config-guide.html
 %attr(755,root,root) %{_bindir}/pkg-config
-%attr(755,root,root) %{_bindir}/*-pld-linux-gnu-pkg-config
+%attr(755,root,root) %{_bindir}/*-pld-linux-gnu*-pkg-config
 %{_aclocaldir}/pkg.m4
 %{_mandir}/man1/pkg-config.1*
