@@ -4,13 +4,13 @@ Summary(pt_BR.UTF-8):	Ferramenta para determinar opções de compilação
 Summary(ru.UTF-8):	Инструмент для определения опций компиляции
 Summary(uk.UTF-8):	Інструмент для визначення опцій компіляції
 Name:		pkgconfig
-Version:	0.29.1
+Version:	0.29.2
 Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		Development/Tools
 Source0:	https://pkgconfig.freedesktop.org/releases/pkg-config-%{version}.tar.gz
-# Source0-md5:	f739a28cae4e0ca291f82d1d41ef107d
+# Source0-md5:	f6e931e319531b736fadc017f470e68a
 URL:		https://pkgconfig.freedesktop.org/wiki/
 BuildRequires:	autoconf >= 2.62
 BuildRequires:	automake >= 1:1.11
